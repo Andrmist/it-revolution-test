@@ -20,9 +20,9 @@ func Run(ctx context.Context, serverCtx types.ServerContext) {
 	r.Use(middleware.Timeout(60 * time.Second))
 	r.Use(contextMiddleware(serverCtx))
 	r.Use(cors.Handler(cors.Options{
-		AllowedOrigins:   []string{"https://stats.m0e.space", "http://localhost:5173"},
+		AllowedOrigins:   []string{"*"},
 		AllowedMethods:   []string{"GET", "POST", "PATCH", "DELETE", "OPTIONS"},
-		AllowedHeaders:   []string{"Accept", "Authorization", "Content-Type", "X-CSRF-Token"},
+		AllowedHeaders:   []string{"Accept", "Content-Type", "X-CSRF-Token"},
 		ExposedHeaders:   []string{"Link"},
 		AllowCredentials: true,
 		MaxAge:           300, // Maximum value not ignored by any of major browsers

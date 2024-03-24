@@ -1,5 +1,14 @@
 # it-revolution-test backend
 
+## Usage
+
+Copy `.env.example` to `.env`. Next start Docker:
+
+```shell
+docker compose build
+docker compose up -d
+```
+
 ## Endpoints
 
 All bodies must be with header `Content-Type: application/json`
